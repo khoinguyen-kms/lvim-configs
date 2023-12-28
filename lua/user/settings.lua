@@ -1,5 +1,4 @@
 reload('user.keymaps')
--- lvim.colorscheme = 'catppuccin-mocha'
+lvim.colorscheme = 'duskfox'
 
 vim.lsp.set_log_level(true)
-require('colorbuddy').colorscheme('cobalt2')
