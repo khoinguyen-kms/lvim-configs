@@ -1,6 +1,5 @@
 lvim.plugins = {
-  -- Colorscheme
-  { "marko-cerovac/material.nvim" },
+  -- Colorscheme { "marko-cerovac/material.nvim" },
   { "catppuccin/nvim" },
   { "EdenEast/nightfox.nvim" },
   {
@@ -49,19 +48,25 @@ lvim.plugins = {
   {
     "folke/noice.nvim",
     event = "VeryLazy",
-    opts = {
-      -- add any options here
-    },
+    opts = {},
     dependencies = {
-      -- if you lazy-load any plugin below, make sure to add proper `module="..."` entries
       "MunifTanjim/nui.nvim",
-      -- OPTIONAL:
-      --   `nvim-notify` is only needed, if you want to use the notification view.
-      --   If not available, we use `mini` as the fallback
       "rcarriga/nvim-notify",
     }
   },
   {
     'nvim-pack/nvim-spectre'
+  },
+  {
+    "jackMort/ChatGPT.nvim",
+    event = "VeryLazy",
+    config = function()
+      require("chatgpt").setup()
+    end,
+    dependencies = {
+      "MunifTanjim/nui.nvim",
+      "nvim-lua/plenary.nvim",
+      "nvim-telescope/telescope.nvim"
+    }
   }
 }
